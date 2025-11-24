@@ -14,7 +14,12 @@ Future<void> main() async {
     anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJwcGF5c29odmxrdWpoa2pnZXVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIxOTEzMzYsImV4cCI6MjA3Nzc2NzMzNn0.9bUWGwbb8WP6vwadbWDsmrs6LeSewriaFkRv9J5dGtg',
   );
 
-runApp(
+// --- O TRUQUE ESTÁ AQUI ---
+  // Força o logout imediato ao abrir o site.
+  // Assim, o Roteador vai ver que não tem sessão e mandar para o Login.
+  await Supabase.instance.client.auth.signOut(); 
+
+  runApp(
     const ProviderScope(
       child: MainApp(),
     ),
