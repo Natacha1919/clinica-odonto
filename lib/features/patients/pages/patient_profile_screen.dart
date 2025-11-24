@@ -229,7 +229,7 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                   _buildAppointmentsTab(p),
 
                   // ABA 3: EVOLUÇÃO
-                  const Center(child: Text("Evolução clínica em breve")),
+                  const Center(child: Text("Evolução clínica em breve.")),
 
                   // ABA 4: ANEXOS (Documentos)
                   _buildAttachmentsTab(),
